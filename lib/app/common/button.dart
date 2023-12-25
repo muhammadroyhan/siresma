@@ -19,21 +19,21 @@ class ButtonAuth extends StatelessWidget {
     final MediaQueryWidth = MediaQuery.of(context).size.width;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromRGBO(188, 24, 35, 1),
+        backgroundColor: Colors.white,
         elevation: 7,
         fixedSize: Size(MediaQueryWidth * 0.4, 45),
         alignment: Alignment.center,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
         ),
       ),
       onPressed: onPress,
       child: Text(
         text,
         style: GoogleFonts.inter(
-          fontSize: 20,
+          fontSize: 16,
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: button_auth,
         ),
       ),
     );

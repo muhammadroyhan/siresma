@@ -1,50 +1,52 @@
 import 'package:get/get.dart';
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../../config/api.dart';
 
 class DataNasabahController extends GetxController {
   RxList<Map<String, dynamic>> users = RxList<Map<String, dynamic>>();
   var isLoading = true.obs;
 
-  Future<void> loadData() async {
+  Future<void> loadTransaksi() async {
     await getDataNasabah();
   }
 
   Future<void> getDataNasabah() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var token = prefs.getString("token");
     try {
-      // Ganti URL dengan URL API yang sesuai
-      var apiUrl = 'https://reqres.in/api/users?page=1&per_page=10';
+      var headers = {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer $token',
+      };
 
-      var response = await Dio().get(apiUrl);
-
+      var url = Uri.parse(API.data_nasabah);
+      http.Response response = await http.get(url, headers: headers);
       if (response.statusCode == 200) {
-        var responseData = response.data;
-
-        // Ganti dengan ekstraksi data sesuai respons API Anda
-        var userData = responseData['data'];
-
-        users.assignAll(List<Map<String, dynamic>>.from(userData));
+        var data = jsonDecode(response.body)['data'];
+        users.assignAll(List<Map<String, dynamic>>.from(data));
+        print(data);
+        isLoading.value = false;
       } else {
-        // Handle kesalahan status code jika diperlukan
-        print('Failed to load data: ${response.statusCode}');
+        isLoading.value = false;
+        print(response.body);
       }
-    } catch (error) {
-      // Handle kesalahan umum jika diperlukan
-      print('Error loading data: $error');
-    } finally {
+    } catch (e) {
       isLoading.value = false;
-      update(); // Memperbarui tampilan
+      print(e);
     }
   }
 
   @override
   void onInit() {
-    loadData();
+    loadTransaksi();
     super.onInit();
   }
 
   @override
   void onReady() {
-    loadData();
     super.onReady();
+    loadTransaksi();
   }
 }
