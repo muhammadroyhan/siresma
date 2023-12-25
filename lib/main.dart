@@ -9,7 +9,7 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Siresma",
+      title: "SUITMEDIA",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),
