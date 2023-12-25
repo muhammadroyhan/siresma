@@ -101,7 +101,7 @@ class LoginView extends GetView<LoginController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Belum punya Akun ?',
+                        'Belum punya Akun?',
                         style: GoogleFonts.inter(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
