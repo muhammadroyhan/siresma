@@ -2,7 +2,7 @@
     package="com.example.siresma">
      <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="SIRESMA"
+        android:label="SUITMEDIA"
         android:name="${applicationName}"
         android:icon="@mipmap/icon_siresma">
         <activity

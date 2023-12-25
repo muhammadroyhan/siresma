@@ -27,6 +27,8 @@ dependencies:
   qr_code_scanner: ^1.0.1
   url_launcher: ^6.1.11
   flutter_secure_storage: ^8.1.0
+  dio: ^4.0.0
+
 
 
 dev_dependencies: 
