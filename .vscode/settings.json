@@ -1,4 +1,5 @@
 {
   "cmake.sourceDirectory": "E:/Backup siresma/5/siresma/linux",
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "dart.flutterSdkPath": "C:\\src\\flutter"
 }
