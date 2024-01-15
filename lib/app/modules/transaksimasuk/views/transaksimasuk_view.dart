@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:siresma/app/common/custom_textformfield.dart';
 import 'package:siresma/app/common/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../models/transaksimasuk.dart';
 import 'package:siresma/app/modules/transaksimasuk/controllers/transaksimasuk_controller.dart';
 
 class TransaksiMasukView extends GetView<TransaksiMasukController> {
