@@ -1,0 +1,6 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "dart.flutterSdkPath": "C:\\src\\flutter",
+    "cmake.sourceDirectory": "C:/Users/ASUS/Documents/siresma/linux"
+}
