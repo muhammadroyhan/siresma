@@ -70,6 +70,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+mockito:
+build_runner:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
