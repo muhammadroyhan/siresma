@@ -1,0 +1,9 @@
+{
+    "success": true,
+    "message": "Sukses mendapatkan data home",
+    "data": {
+        "id": 6,
+        "name": "Semarang Barat",
+        "description": "Kecamatan Semarang Barat"
+    }
+}

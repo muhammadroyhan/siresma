@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "message": "Sukses mendapatkan data transaksi",
+    "data": {
+        "user_balance": 781350,
+        "oldest_data_month": "06-2024",
+        "newest_data_month": "06-2024",
+        "transaction_list": []
+    }
+}

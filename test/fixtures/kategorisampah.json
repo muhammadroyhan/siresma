@@ -1,0 +1,84 @@
+{
+    "success": true,
+    "message": [
+        {
+            "id": 3,
+            "category_name": "Plastik",
+            "unit": "kg",
+            "price": 1100
+        },
+        {
+            "id": 4,
+            "category_name": "Kardus",
+            "unit": "kg",
+            "price": 1100
+        },
+        {
+            "id": 5,
+            "category_name": "Besi B",
+            "unit": "kg",
+            "price": 2500
+        },
+        {
+            "id": 6,
+            "category_name": "Besi Biasa",
+            "unit": "kg",
+            "price": 4000
+        },
+        {
+            "id": 7,
+            "category_name": "Sandal",
+            "unit": "kg",
+            "price": 500
+        },
+        {
+            "id": 8,
+            "category_name": "Timah atau tembaga",
+            "unit": "kg",
+            "price": 90000
+        },
+        {
+            "id": 9,
+            "category_name": "Marga/campuran",
+            "unit": "kg",
+            "price": 500
+        },
+        {
+            "id": 10,
+            "category_name": "Minyak Jelantah",
+            "unit": "Kg",
+            "price": 4000
+        },
+        {
+            "id": 11,
+            "category_name": "Kaleng",
+            "unit": "Kg",
+            "price": 2500
+        },
+        {
+            "id": 12,
+            "category_name": "Kertas",
+            "unit": "Kg",
+            "price": 1200
+        },
+        {
+            "id": 13,
+            "category_name": "Botol fresh",
+            "unit": "pcs",
+            "price": 500
+        },
+        {
+            "id": 14,
+            "category_name": "Botol marjan",
+            "unit": "pcs",
+            "price": 100
+        },
+        {
+            "id": 15,
+            "category_name": "tutup botol",
+            "unit": "kg",
+            "price": 500
+        }
+    ],
+    "data": 200
+}

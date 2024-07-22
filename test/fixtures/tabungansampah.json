@@ -1,0 +1,26 @@
+{
+    "success": true,
+    "message": "Success",
+    "data": {
+        "user_balance": 781350,
+        "trash_store_logs": [
+            {
+                "id": 462,
+                "user_id": 249,
+                "status": "Selesai",
+                "trash_bank_id": 6,
+                "user_balance": 7700,
+                "admin_balance": 3300,
+                "store_date": "2024-06-06",
+                "created_at": "2024-06-06T08:50:05.000000Z",
+                "updated_at": "2024-06-20T03:33:49.000000Z",
+                "trash_category": "Plastik",
+                "iot": {
+                    "id": 586,
+                    "code": "JIQ7UWC",
+                    "weight": 10
+                }
+            }
+        ]
+    }
+}

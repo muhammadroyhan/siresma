@@ -1,0 +1,14 @@
+{
+    "success": true,
+    "message": "Sukses mendapatkan data profil user",
+    "data": {
+        "id": 249,
+        "full_name": "Muhammad Rayhan M.A",
+        "role": "nasabah",
+        "phone": "085157024883",
+        "location": "Semarang Barat",
+        "address": "Jepara",
+        "no_kk": "3374072812220002",
+        "profile_picture": "https://api.siresma.com/storage/profile_picture/liihqPAbAtsTjjnr0TfcB00Fyi4lUBBgfCpSXnvO.jpg"
+    }
+}
