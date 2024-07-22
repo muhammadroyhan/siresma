@@ -9,7 +9,6 @@ import 'package:siresma/views/user/profilescreen.dart';
 import 'package:siresma/views/user/setorsampahscreen.dart';
 import 'package:siresma/views/user/tabungansampahscreen.dart';
 
-
 class UserNavbarViewModel extends GetxController {
   PersistentTabController controllertab =
       PersistentTabController(initialIndex: 0);
@@ -17,6 +16,7 @@ class UserNavbarViewModel extends GetxController {
   List<PersistentTabConfig> tabs() => [
         PersistentTabConfig(
           screen: const HomeScreen(),
+          navigatorConfig: const NavigatorConfig(initialRoute: '/home'),
           item: ItemConfig(
             icon: const Icon(FontAwesomeIcons.house),
             iconSize: 24.sp,
@@ -28,6 +28,7 @@ class UserNavbarViewModel extends GetxController {
         ),
         PersistentTabConfig(
           screen: const SetorSampahScreen(),
+          navigatorConfig: const NavigatorConfig(initialRoute: '/setorsampah'),
           item: ItemConfig(
             icon: const Icon(FontAwesomeIcons.trashArrowUp),
             iconSize: 24.sp,
@@ -39,6 +40,8 @@ class UserNavbarViewModel extends GetxController {
         ),
         PersistentTabConfig(
           screen: const TabunganSampahScreen(),
+          navigatorConfig:
+              const NavigatorConfig(initialRoute: '/tabungansampah'),
           item: ItemConfig(
             icon: const Icon(FontAwesomeIcons.trashCan),
             iconSize: 24.sp,
@@ -50,6 +53,7 @@ class UserNavbarViewModel extends GetxController {
         ),
         PersistentTabConfig(
           screen: const Profilescreen(),
+          navigatorConfig: const NavigatorConfig(initialRoute: '/profile'),
           item: ItemConfig(
             icon: const Icon(FontAwesomeIcons.solidUser),
             iconSize: 24.sp,

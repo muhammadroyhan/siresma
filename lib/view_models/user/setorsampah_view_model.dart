@@ -49,7 +49,7 @@ class SetorSampahViewModel extends GetxController {
       isLoading(true);
       var fetchkategori = await apiService.fetchCategory();
       kategori.value = fetchkategori;
-      await profileViewModel.FetchUserProfile();
+      await profileViewModel.loadUserPorfile();
       update();
     } catch (e) {
       isLoading(false);
@@ -63,6 +63,7 @@ class SetorSampahViewModel extends GetxController {
     String trash_category_id,
     String store_date,
   ) async {
+    isLoading(true);
     try {
       final response =
           await apiService.depositTrash(trash_category_id, store_date);
@@ -75,16 +76,19 @@ class SetorSampahViewModel extends GetxController {
           colorText: Colors.white,
           backgroundColor: primaryColor1,
         );
-        resetForm();
-        tabunganSampahViewModel.FetchTabunganSampah();
-        // userNavbarViewModel.controllertab.jumpToTab(2);
         Timer(
           const Duration(seconds: 2),
           () {
             userNavbarViewModel.controllertab.jumpToTab(2);
+            print('Pindah Halaman');
           },
         );
+        resetForm();
+        tabunganSampahViewModel.FetchTabunganSampah();
+        // userNavbarViewModel.controllertab.jumpToTab(2);
+        isLoading(true);
       } else {
+        isLoading(false);
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Setor Sampah Gagal",
@@ -97,10 +101,12 @@ class SetorSampahViewModel extends GetxController {
       Get.snackbar(
         snackPosition: SnackPosition.TOP,
         "Setor Sampah Gagal",
-        "${e.toString()}",
+        "Pilih Lokasi Bank Sampah Terlebih Dahulu",
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
+    } finally {
+      isLoading(false);
     }
   }
 

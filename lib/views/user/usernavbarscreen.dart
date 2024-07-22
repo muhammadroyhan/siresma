@@ -29,12 +29,12 @@ class UserNavbarScreen extends GetView<UserNavbarViewModel> {
             duration: Duration(milliseconds: 200),
           ),
           tabs: controller.tabs(),
-          navBarBuilder: (NavBarConfig) => Style2BottomNavBar(
+          navBarBuilder: (navbar) => Style2BottomNavBar(
             navBarDecoration: NavBarDecoration(
               color: primaryColor1,
               borderRadius: BorderRadius.circular(30),
             ),
-            navBarConfig: NavBarConfig,
+            navBarConfig: navbar,
           ),
         );
       },

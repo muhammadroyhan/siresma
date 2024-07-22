@@ -68,7 +68,57 @@ class SetorSampahScreen extends GetView<SetorSampahViewModel> {
                           SizedBox(
                             height: 4.h,
                           ),
-                          dropdown_kategori(controller),
+                          DropdownButtonFormField<Kategori>(
+                            style: AppStyle(
+                              16.sp,
+                              primaryColor1,
+                              FontWeight.bold,
+                            ),
+                            hint: Text(
+                              'Pilih Kategori Sampah An-ogranik',
+                              style: AppStyle(
+                                16.sp,
+                                hintstyle,
+                                FontWeight.bold,
+                              ),
+                            ),
+                            iconDisabledColor: Colors.black,
+                            iconEnabledColor: primaryColor1,
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: backgroundft,
+                              enabledBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.transparent),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16),
+                                ),
+                              ),
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.transparent),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16),
+                                ),
+                              ),
+                              border: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.transparent),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16),
+                                ),
+                              ),
+                            ),
+                            items: controller.kategori.map((kategori) {
+                              return DropdownMenuItem<Kategori>(
+                                value: kategori,
+                                child: Text(kategori.categoryName),
+                              );
+                            }).toList(),
+                            onChanged: (Kategori? newValue) {
+                              controller.setSelectedLocation(newValue);
+                            },
+                          ),
                           SizedBox(
                             height: 16.h,
                           ),

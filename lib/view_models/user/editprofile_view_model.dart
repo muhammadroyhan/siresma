@@ -88,11 +88,12 @@ class EditprofileViewModel extends GetxController {
           colorText: Colors.white,
           backgroundColor: primaryColor1,
         );
-        await profileViewModel.FetchUserProfile();
+        await profileViewModel.loadUserPorfile();
         Timer(
           const Duration(seconds: 2),
           () {
-            Get.back();
+            userNavbarViewModel.controllertab.jumpToTab(3);
+            print('Pindah Halaman');
           },
         );
         // isLoading.value = true;

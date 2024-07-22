@@ -54,7 +54,9 @@ class LoginViewModel extends GetxController {
       if (response != null && response.success) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         await prefs.setString('token', response.token);
+        await prefs.setString('role', response.data.role);
         print(response.token);
+        print(response.data.role);
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Masuk Berhasil",

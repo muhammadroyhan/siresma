@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:siresma/config/api.dart';
@@ -102,7 +101,7 @@ class ApiService {
         return ChoseLocation.fromJson(json.decode(response.body));
       }
     } catch (e) {
-      print("Exception in login request: $e");
+      print("Exception in location request: $e");
       return null;
     }
   }
@@ -133,28 +132,33 @@ class ApiService {
     String trash_category_id,
     String store_date,
   ) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    var token = prefs.getString('token');
-    var trash_bank_id = prefs.getString('trash_bank_id');
-    print(trash_bank_id);
-    final response = await https.post(
-      Uri.parse(API.setor_sampah),
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Bearer $token',
-      },
-      body: {
-        'trash_category_id': trash_category_id,
-        'trash_bank_id': trash_bank_id.toString(),
-        'store_date': store_date,
-      },
-    );
-    if (response.statusCode == 200) {
-      return PostTrashModel.fromJson(json.decode(response.body));
-    } else {
-      const SocketException('Failed to POST data');
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      var token = prefs.getString('token');
+      var trash_bank_id = prefs.getString('trash_bank_id');
+      print(trash_bank_id);
+      final response = await https.post(
+        Uri.parse(API.setor_sampah),
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+        body: {
+          'trash_category_id': trash_category_id,
+          'trash_bank_id': trash_bank_id.toString(),
+          'store_date': store_date,
+        },
+      );
+      if (response.statusCode == 200 || response.statusCode == 400) {
+        return PostTrashModel.fromJson(json.decode(response.body));
+      } else {
+        print("Unhandled response status: ${response.statusCode}");
+        return PostTrashModel.fromJson(json.decode(response.body));
+      }
+    } catch (e) {
+      print("Exception in trashdepo request: $e");
+      return null;
     }
-    return null;
   }
 
   Future<TabunganModel> fetchTabungan() async {
