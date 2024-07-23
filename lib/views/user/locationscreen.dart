@@ -147,7 +147,6 @@ class LocationScreen extends GetView<LocationViewModel> {
                                   colorText: Colors.white,
                                   backgroundColor: Colors.red,
                                 );
-                                return;
                               } else {
                                 controller.postLocation(
                                     controller.selectedLocation!.id.toString());
