@@ -78,7 +78,7 @@ class ApiService {
     }
   }
 
-  Future<ChoseLocation?> PostLocation(String trash_bank_id) async {
+  Future<ChoseLocation?> PostLocation(int trash_bank_id) async {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
@@ -89,7 +89,7 @@ class ApiService {
           'Authorization': 'Bearer $token',
         },
         body: {
-          'trash_bank_id': trash_bank_id,
+          'trash_bank_id': trash_bank_id.toString(),
         },
       );
       print("Response status: ${response.statusCode}");
@@ -135,7 +135,7 @@ class ApiService {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
-      var trash_bank_id = prefs.getString('trash_bank_id');
+      var trash_bank_id = prefs.getInt('trash_bank_id');
       print(trash_bank_id);
       final response = await https.post(
         Uri.parse(API.setor_sampah),

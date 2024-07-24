@@ -68,7 +68,15 @@ class SetorSampahViewModel extends GetxController {
       final response =
           await apiService.depositTrash(trash_category_id, store_date);
       if (response!.success) {
-        print(response.message);
+        Timer(
+          const Duration(seconds: 0),
+          () {
+            userNavbarViewModel.controllertab.jumpToTab(2);
+            tabunganSampahViewModel.loadTabunganSampah();
+            print('Pindah Halaman');
+          },
+        );
+        resetForm();
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Setor Sampah Berhasil",
@@ -76,19 +84,9 @@ class SetorSampahViewModel extends GetxController {
           colorText: Colors.white,
           backgroundColor: primaryColor1,
         );
-        Timer(
-          const Duration(seconds: 2),
-          () {
-            userNavbarViewModel.controllertab.jumpToTab(2);
-            print('Pindah Halaman');
-          },
-        );
-        resetForm();
-        tabunganSampahViewModel.FetchTabunganSampah();
-        // userNavbarViewModel.controllertab.jumpToTab(2);
-        isLoading(true);
+        isLoading.value = true;
       } else {
-        isLoading(false);
+        isLoading.value = false;
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Setor Sampah Gagal",

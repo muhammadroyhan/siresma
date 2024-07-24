@@ -149,7 +149,8 @@ class LocationScreen extends GetView<LocationViewModel> {
                                 );
                               } else {
                                 controller.postLocation(
-                                    controller.selectedLocation!.id.toString());
+                                  controller.selectedLocation!.id,
+                                );
                               }
                             },
                             style: ElevatedButton.styleFrom(
