@@ -162,8 +162,8 @@ class AuthService {
       },
     );
     if (response.statusCode == 200) {
-      print(token);
       await prefs.remove('token');
+      print(token);
       Map<String, dynamic> responseBody = json.decode(response.body);
       return responseBody;
     } else {

@@ -93,7 +93,6 @@ class EditprofileViewModel extends GetxController {
           const Duration(seconds: 2),
           () {
             userNavbarViewModel.controllertab.jumpToTab(3);
-            print('Pindah Halaman');
           },
         );
         // isLoading.value = true;

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:siresma/common/colors.dart';
 import 'package:siresma/config/api_service.dart';
 import 'package:siresma/models/kategori_sampah.dart';
@@ -47,6 +48,9 @@ class SetorSampahViewModel extends GetxController {
   Future<void> FetchKategori() async {
     try {
       isLoading(true);
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var trash_bank_id = await prefs.getInt('trash_bank_id');
+      print(trash_bank_id);
       var fetchkategori = await apiService.fetchCategory();
       kategori.value = fetchkategori;
       await profileViewModel.loadUserPorfile();
@@ -73,7 +77,6 @@ class SetorSampahViewModel extends GetxController {
           () {
             userNavbarViewModel.controllertab.jumpToTab(2);
             tabunganSampahViewModel.loadTabunganSampah();
-            print('Pindah Halaman');
           },
         );
         resetForm();
@@ -112,5 +115,14 @@ class SetorSampahViewModel extends GetxController {
   void onInit() {
     super.onInit();
     loadSetorSampah();
+    update();
+  }
+
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+    loadSetorSampah();
+    update();
   }
 }

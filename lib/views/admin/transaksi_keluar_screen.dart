@@ -43,134 +43,138 @@ class TransaksiKeluarScreen extends GetView<TransaksiKeluarViewModel> {
                               itemCount: controller.transaksikeluar.length,
                               itemBuilder: (context, index) {
                                 var data = controller.transaksikeluar[index];
-                                return Container(
-                                  // height: 100.h,
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                        spreadRadius: 6,
-                                        blurRadius: 5,
-                                        offset: Offset.fromDirection(1, 6),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Kode Transaksi',
-                                            style: AppStyle(
-                                              14.sp,
-                                              Colors.black,
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            data.code,
-                                            style: AppStyle(
-                                              12.sp,
-                                              primaryColor1,
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 16.h,
-                                          ),
-                                          Text(
-                                            'Nama Penyetor',
-                                            style: AppStyle(
-                                              14.sp,
-                                              Colors.black,
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            data.name,
-                                            style: AppStyle(
-                                              12.sp,
-                                              primaryColor1,
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 8.w,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            data.is_approved == 0
-                                                ? 'Mengajukan Penarikan'
-                                                : 'Penarikan Disetujui',
-                                            style: AppStyle(
-                                              12.sp,
-                                              data.is_approved == 0
-                                                  ? Color.fromARGB(
-                                                      255, 249, 3, 3)
-                                                  : Color.fromARGB(
-                                                      255, 3, 168, 18),
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            data.amount.toString(),
-                                            style: AppStyle(
-                                              12.sp,
-                                              primaryColor1,
-                                              FontWeight.bold,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 16.h,
-                                          ),
-                                          ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(100),
-                                              ),
-                                              backgroundColor:
-                                                  data.is_approved == 0
-                                                      ? primaryColor1
-                                                      : Colors.grey,
-                                              fixedSize: Size.fromWidth(
-                                                140.w,
-                                              ),
-                                            ),
-                                            onPressed: () {
-                                              controller.approveDana(
-                                                data.id,
-                                              );
-                                              data.is_approved == 1;
-                                            },
-                                            child: Text(
-                                              data.is_approved == 0
-                                                  ? 'Setujui Penarikan'
-                                                  : 'Pencairan telah disetujui',
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 16),
+                                  child: Container(
+                                    // height: 100.h,
+                                    padding: const EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black12,
+                                          spreadRadius: 6,
+                                          blurRadius: 5,
+                                          offset: Offset.fromDirection(1, 6),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Kode Transaksi',
                                               style: AppStyle(
-                                                10.sp,
-                                                Colors.white,
+                                                14.sp,
+                                                Colors.black,
                                                 FontWeight.bold,
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                            Text(
+                                              data.code,
+                                              style: AppStyle(
+                                                12.sp,
+                                                primaryColor1,
+                                                FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16.h,
+                                            ),
+                                            Text(
+                                              'Nama Penyetor',
+                                              style: AppStyle(
+                                                14.sp,
+                                                Colors.black,
+                                                FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              data.name,
+                                              style: AppStyle(
+                                                12.sp,
+                                                primaryColor1,
+                                                FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 8.w,
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              data.is_approved == 0
+                                                  ? 'Mengajukan Penarikan'
+                                                  : 'Penarikan Disetujui',
+                                              style: AppStyle(
+                                                12.sp,
+                                                data.is_approved == 0
+                                                    ? Color.fromARGB(
+                                                        255, 249, 3, 3)
+                                                    : Color.fromARGB(
+                                                        255, 3, 168, 18),
+                                                FontWeight.bold,
+                                              ),
+                                            ),
+                                            Text(
+                                              data.amount.toString(),
+                                              style: AppStyle(
+                                                12.sp,
+                                                primaryColor1,
+                                                FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16.h,
+                                            ),
+                                            ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          100),
+                                                ),
+                                                backgroundColor:
+                                                    data.is_approved == 0
+                                                        ? primaryColor1
+                                                        : Colors.grey,
+                                                fixedSize: Size.fromWidth(
+                                                  140.w,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                controller.approveDana(
+                                                  data.id,
+                                                );
+                                                data.is_approved == 1;
+                                              },
+                                              child: Text(
+                                                data.is_approved == 0
+                                                    ? 'Setujui Penarikan'
+                                                    : 'Pencairan telah disetujui',
+                                                style: AppStyle(
+                                                  10.sp,
+                                                  Colors.white,
+                                                  FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 );
                               },

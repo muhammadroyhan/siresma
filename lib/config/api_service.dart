@@ -136,7 +136,6 @@ class ApiService {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
       var trash_bank_id = prefs.getInt('trash_bank_id');
-      print(trash_bank_id);
       final response = await https.post(
         Uri.parse(API.setor_sampah),
         headers: {
@@ -145,7 +144,7 @@ class ApiService {
         },
         body: {
           'trash_category_id': trash_category_id,
-          'trash_bank_id': trash_bank_id.toString(),
+          'trash_bank_id': trash_bank_id?.toString(),
           'store_date': store_date,
         },
       );
