@@ -24,7 +24,7 @@ class UserData {
   String role;
   String phone;
   String address;
-  String location;
+  String? location;
   String noKk;
   String profilePicture;
 
@@ -46,7 +46,7 @@ class UserData {
       role: json['role'],
       phone: json['phone'],
       address: json['address'],
-      location: json['location'], // Handle nullable location
+      location: json['location'] ?? "null lokasi", // Handle nullable location
       noKk: json['no_kk'],
       profilePicture: json['profile_picture'],
     );

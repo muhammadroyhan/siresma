@@ -71,9 +71,7 @@ class LoginViewModel extends GetxController {
             Get.offAllNamed('/adminnavbar');
           }
         });
-        isLoading.value = true;
       } else {
-        isLoading.value = false;
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Masuk Gagal",
@@ -86,7 +84,7 @@ class LoginViewModel extends GetxController {
       Get.snackbar(
         snackPosition: SnackPosition.TOP,
         "Masuk Gagal",
-        'Pastikan Internet anda sudah dinyalakan',
+        'Pastikan username dan password anda benar',
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:siresma/common/colors.dart';
-
 import 'package:siresma/view_models/user/usernavbar_view_model.dart';
 
 class UserNavbarScreen extends GetView<UserNavbarViewModel> {
@@ -24,11 +22,7 @@ class UserNavbarScreen extends GetView<UserNavbarViewModel> {
           resizeToAvoidBottomInset: true,
           stateManagement: true,
           hideNavigationBarWhenKeyboardAppears: true,
-          margin: const EdgeInsets.only(
-            bottom: 8,
-            right: 8,
-            left: 8,
-          ),
+          margin: const EdgeInsets.only(bottom: 8, right: 8, left: 8),
           animationSettings: const NavBarAnimationSettings(
             screenTransitionAnimation: ScreenTransitionAnimationSettings(
               animateTabTransition: true,

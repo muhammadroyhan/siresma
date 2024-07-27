@@ -6,12 +6,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:siresma/common/colors.dart';
 import 'package:siresma/config/api_service.dart';
 import 'package:siresma/models/location.dart';
+import 'package:siresma/view_models/user/home_view_model.dart';
 
 class LocationViewModel extends GetxController {
   var isLoading = false.obs;
   var locations = List<Location>.empty().obs;
   Location? selectedLocation;
   ApiService apiService = ApiService();
+  HomeViewModel homeViewModel = Get.put(HomeViewModel());
 
   void setSelectedLocation(Location? newValue) {
     selectedLocation = newValue;
@@ -55,13 +57,12 @@ class LocationViewModel extends GetxController {
           backgroundColor: primaryColor1,
         );
         Timer(const Duration(seconds: 2), () {
-          Get.offAllNamed(
+          Get.offAndToNamed(
             '/usernavbar',
+            arguments: homeViewModel.loadFetchHome(),
           );
         });
-        isLoading.value = true;
       } else {
-        isLoading.value = false;
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Pilih Lokasi Gagal",

@@ -48,6 +48,9 @@ class RegisterViewModel extends GetxController {
     if (value.length > 16) {
       return "Nomor KK tidak boleh lebih dari 16 angka";
     }
+    if (value.length < 16) {
+      return "Nomor KK tidak boleh kurang dari 16 angka";
+    }
     if (!RegExp(r'^\d+$').hasMatch(value)) {
       return 'Nomor HP hanya boleh mengandung angka';
     }
@@ -141,10 +144,12 @@ class RegisterViewModel extends GetxController {
           colorText: Colors.white,
           backgroundColor: primaryColor1,
         );
-        Timer(const Duration(seconds: 2), () {
-          Get.offAllNamed('/otp');
-        });
-        isLoading.value = true;
+        Timer(
+          const Duration(seconds: 2),
+          () {
+            Get.offAllNamed('/otp');
+          },
+        );
       } else {
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
@@ -153,13 +158,12 @@ class RegisterViewModel extends GetxController {
           colorText: Colors.white,
           backgroundColor: Colors.red,
         );
-        isLoading.value = false;
       }
     } catch (e) {
       Get.snackbar(
         snackPosition: SnackPosition.TOP,
-        "Pendafataran Gagal",
-        "Pastikan Memasukan Data dengan benar",
+        "Pendaftaran Gagal",
+        "Pastikan Memasukkan Data dengan benar",
         colorText: Colors.white,
         backgroundColor: Colors.red,
       );

@@ -1,34 +1,34 @@
 class API {
-  static const login = 'https://api.siresma.com/api/auth/login';
-  static const otp = 'https://api.siresma.com/api/auth/verify';
-  static const create_otp = 'https://api.siresma.com/api/auth/otp/create';
-  static const register = 'https://api.siresma.com/api/auth/registration';
-  static const logout = 'https://api.siresma.com/api/auth/logout';
-  static const bank_sampah = 'https://api.siresma.com/api/bank-sampah/list';
-  static const home = 'https://api.siresma.com/api/home';
+  static const login = 'http://api.siresma.my.id/api/auth/login';
+  static const otp = 'http://api.siresma.my.id/api/auth/verify';
+  static const create_otp = 'http://api.siresma.my.id/api/auth/otp/create';
+  static const register = 'http://api.siresma.my.id/api/auth/registration';
+  static const logout = 'http://api.siresma.my.id/api/auth/logout';
+  static const bank_sampah = 'http://api.siresma.my.id/api/bank-sampah/list';
+  static const home = 'http://api.siresma.my.id/api/home';
   static const choose_bank_sampah =
-      'https://api.siresma.com/api/bank-sampah/choose';
+      'http://api.siresma.my.id/api/bank-sampah/choose';
   static const ganti_password =
-      'https://api.siresma.com/api/myprofile/update/password';
-  static const update_profil = 'https://api.siresma.com/api/myprofile/update';
-  static const category_sampah = 'https://api.siresma.com/api/trash/category';
-  static const setor_sampah = 'https://api.siresma.com/api/trash/store';
-  static const iot = 'https://api.siresma.com/api/trash/iot-connect';
-  static const list_sampah = 'https://api.siresma.com/api/trash/list';
-  static const get_profile = 'https://api.siresma.com/api/myprofile/details';
-  static const weight_iots = 'https://api.siresma.com/api/iot/store';
-  static const data_nasabah = 'https://api.siresma.com/api/admin/nasabah';
-  static const transaksi = 'https://api.siresma.com/api/transaction/withdraw';
-  static const list_transaksi = 'https://api.siresma.com/api/transaction/list';
+      'http://api.siresma.my.id/api/myprofile/update/password';
+  static const update_profil = 'http://api.siresma.my.id/api/myprofile/update';
+  static const category_sampah = 'http://api.siresma.my.id/api/trash/category';
+  static const setor_sampah = 'http://api.siresma.my.id/api/trash/store';
+  static const iot = 'http://api.siresma.my.id/api/trash/iot-connect';
+  static const list_sampah = 'http://api.siresma.my.id/api/trash/list';
+  static const get_profile = 'http://api.siresma.my.id/api/myprofile/details';
+  static const weight_iots = 'http://api.siresma.my.id/api/iot/store';
+  static const data_nasabah = 'http://api.siresma.my.id/api/admin/nasabah';
+  static const transaksi = 'http://api.siresma.my.id/api/transaction/withdraw';
+  static const list_transaksi = 'http://api.siresma.my.id/api/transaction/list';
   static const detail_nasabah =
-      'https://api.siresma.com/api/admin/nasabah/details';
+      'http://api.siresma.my.id/api/admin/nasabah/details';
   static const transaksi_admin =
-      'https://api.siresma.com/api/admin/nasabah/details/transactions';
+      'http://api.siresma.my.id/api/admin/nasabah/details/transactions';
   static const transaksimasuk =
-      'https://api.siresma.com/api/admin/transactions/incoming';
+      'http://api.siresma.my.id/api/admin/transactions/incoming';
   static const transaksikeluar =
-      'https://api.siresma.com/api/admin/transactions/outcoming';
+      'http://api.siresma.my.id/api/admin/transactions/outcoming';
   static const approvetransaksi =
-      'https://api.siresma.com/api/admin/nasabah/details/transactions/approve';
-  static const code_iots = "https://api.siresma.com/api/iot/connect";
+      'http://api.siresma.my.id/api/admin/nasabah/details/transactions/approve';
+  static const code_iots = "http://api.siresma.my.id/api/iot/connect";
 }

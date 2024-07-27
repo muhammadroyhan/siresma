@@ -79,8 +79,7 @@ class QrcodeViewModel extends GetxController {
           const Duration(seconds: 1),
           () {
             tabunganSampahViewModel.FetchTabunganSampah();
-            Get.back();
-            // userNavbarViewModel.controllertab.jumpToTab(2);
+            userNavbarViewModel.controllertab.jumpToTab(2);
           },
         );
         // hasSentPostRequest = false;

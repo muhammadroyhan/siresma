@@ -124,7 +124,7 @@ class ApiService {
       }
       return kategori;
     } else {
-      throw Exception('Failed to load locations');
+      throw Exception('Failed to load Kategori');
     }
   }
 
@@ -144,7 +144,7 @@ class ApiService {
         },
         body: {
           'trash_category_id': trash_category_id,
-          'trash_bank_id': trash_bank_id?.toString(),
+          'trash_bank_id': trash_bank_id.toString(),
           'store_date': store_date,
         },
       );

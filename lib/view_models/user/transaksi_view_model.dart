@@ -59,4 +59,11 @@ class TransaksiViewModel extends GetxController {
     update();
     super.onInit();
   }
+
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    update();
+    super.onReady();
+  }
 }

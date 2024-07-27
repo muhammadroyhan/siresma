@@ -114,6 +114,8 @@ class EditprofileViewModel extends GetxController {
         colorText: Colors.white,
         backgroundColor: Colors.red,
       );
+    } finally {
+      isLoading(false);
     }
   }
 

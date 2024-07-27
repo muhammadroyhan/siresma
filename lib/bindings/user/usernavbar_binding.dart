@@ -8,20 +8,10 @@ import 'package:siresma/view_models/user/usernavbar_view_model.dart';
 class UserNavbarBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<UserNavbarViewModel>(
-      () => UserNavbarViewModel(),
-    );
-    Get.lazyPut(
-      () => HomeViewModel(),
-    );
-    Get.lazyPut(
-      () => SetorSampahViewModel(),
-    );
-    Get.lazyPut(
-      () => TabunganSampahViewModel(),
-    );
-    Get.lazyPut(
-      () => ProfileViewModel(),
-    );
+    Get.lazyPut<UserNavbarViewModel>(() => UserNavbarViewModel());
+    Get.lazyPut(() => HomeViewModel());
+    Get.lazyPut(() => SetorSampahViewModel());
+    Get.lazyPut(() => TabunganSampahViewModel());
+    Get.lazyPut(() => ProfileViewModel());
   }
 }

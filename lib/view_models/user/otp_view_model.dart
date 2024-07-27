@@ -30,9 +30,7 @@ class OtpViewModel extends GetxController {
         Timer(const Duration(seconds: 2), () {
           Get.offAllNamed('/login');
         });
-        isLoading.value = true;
       } else {
-        isLoading.value = false;
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Verifikasi Gagal",
@@ -49,6 +47,8 @@ class OtpViewModel extends GetxController {
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
+    } finally {
+      isLoading(false);
     }
   }
 

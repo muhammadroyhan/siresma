@@ -23,49 +23,49 @@ class UserNavbarViewModel extends GetxController {
     ];
   }
 
-  List<PersistentBottomNavBarItem> tabs() => [
-        PersistentBottomNavBarItem(
-          icon: const Icon(FontAwesomeIcons.house),
-          iconSize: 24.sp,
-          title: "Home",
-          textStyle: AppStyle(12.sp, primaryColor1, FontWeight.normal),
-          activeColorPrimary: Colors.white,
-          activeColorSecondary: primaryColor1,
-          inactiveColorPrimary: Colors.white,
-        ),
-        PersistentBottomNavBarItem(
-          icon: const Icon(FontAwesomeIcons.trashArrowUp),
-          iconSize: 24.sp,
-          title: "Setor Sampah",
-          textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
-          activeColorPrimary: Colors.white,
-          activeColorSecondary: primaryColor1,
-          inactiveColorPrimary: Colors.white,
-        ),
-        PersistentBottomNavBarItem(
-          icon: const Icon(FontAwesomeIcons.trashCan),
-          iconSize: 24.sp,
-          title: "Tabungan Sampah",
-          textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
-          activeColorPrimary: Colors.white,
-          activeColorSecondary: primaryColor1,
-          inactiveColorPrimary: Colors.white,
-        ),
-        PersistentBottomNavBarItem(
-          icon: const Icon(FontAwesomeIcons.solidUser),
-          iconSize: 24.sp,
-          title: "Profil",
-          textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
-          activeColorPrimary: Colors.white,
-          activeColorSecondary: primaryColor1,
-          inactiveColorPrimary: Colors.white,
-        ),
-      ];
+  List<PersistentBottomNavBarItem> tabs() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: const Icon(FontAwesomeIcons.house),
+        iconSize: 24.sp,
+        title: "Beranda",
+        textStyle: AppStyle(12.sp, primaryColor1, FontWeight.normal),
+        activeColorPrimary: Colors.white,
+        activeColorSecondary: primaryColor1,
+        inactiveColorPrimary: Colors.white,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(FontAwesomeIcons.trashArrowUp),
+        iconSize: 24.sp,
+        title: "Setor Sampah",
+        textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
+        activeColorPrimary: Colors.white,
+        activeColorSecondary: primaryColor1,
+        inactiveColorPrimary: Colors.white,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(FontAwesomeIcons.trashCan),
+        iconSize: 24.sp,
+        title: "Tabungan Sampah",
+        textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
+        activeColorPrimary: Colors.white,
+        activeColorSecondary: primaryColor1,
+        inactiveColorPrimary: Colors.white,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(FontAwesomeIcons.solidUser),
+        iconSize: 24.sp,
+        title: "Profil",
+        textStyle: AppStyle(12.sp, Colors.white, FontWeight.normal),
+        activeColorPrimary: Colors.white,
+        activeColorSecondary: primaryColor1,
+        inactiveColorPrimary: Colors.white,
+      ),
+    ];
+  }
+
   @override
   void onInit() {
-    controllertab;
-    tabs();
-    // TODO: implement onInit
     super.onInit();
   }
 }

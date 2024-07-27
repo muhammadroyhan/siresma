@@ -49,7 +49,6 @@ class ProfileViewModel extends GetxController {
       Map<String, dynamic> response = await authService.logout();
       bool success = response['success'];
       String message = response['message'];
-
       if (success) {
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
@@ -64,9 +63,9 @@ class ProfileViewModel extends GetxController {
             Get.offAllNamed('/login');
           },
         );
-        isLoading.value = true;
+        // isLoading.value = true;
       } else {
-        isLoading.value = false;
+        // isLoading.value = false;
         Get.snackbar(
           snackPosition: SnackPosition.TOP,
           "Keluar Gagal",
@@ -81,6 +80,8 @@ class ProfileViewModel extends GetxController {
         e.toString(),
         backgroundColor: Colors.white,
       );
+    } finally {
+      isLoading(false);
     }
   }
 

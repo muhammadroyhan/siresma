@@ -50,10 +50,12 @@ class SetorSampahViewModel extends GetxController {
       isLoading(true);
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var trash_bank_id = await prefs.getInt('trash_bank_id');
-      print(trash_bank_id);
+      print("Mendapatkan $trash_bank_id");
       var fetchkategori = await apiService.fetchCategory();
       kategori.value = fetchkategori;
+      print(kategori);
       await profileViewModel.loadUserPorfile();
+      print(profileViewModel.loadUserPorfile());
       update();
     } catch (e) {
       isLoading(false);
